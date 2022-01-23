@@ -119,7 +119,7 @@ Vue.component("modal", {
         setTimeout(() => {
           e.preventDefault();
            
-          fetch('', {
+          fetch('https://formcarry.com/s/OqfoTeY9DSi', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({ name: this.name, phone: this.phone, email: this.email, text: this.text, check: this.check })

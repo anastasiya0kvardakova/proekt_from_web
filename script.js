@@ -60,3 +60,32 @@ $(document).ready(function () {
       ]
     });
   });
+ 
+$(document).ready(function () {
+    $('#contact-form1').on('submit', function (e) {
+      e.preventDefault();
+      $.ajax({
+        url: '',
+        dataType: "json",
+        method: 'POST',
+        data: {
+          name: $('#name-of-form').val(),
+          phone: $('#phone-of-form').val(),
+          email: $('#email-of-form').val(),
+          message: $('#message-of-form').val(),
+          check: $('#happy').is(':checked')
+        },
+        success: function (response) {
+          console.log('Got data: ', response);
+          if (response.meta.status == 'success') {
+            $('.modal').modal('hide');
+            alert("Спасибо за отзыв!)");
+          } else if (response.meta.status == 'fail') {
+            $('.modal').modal('hide');
+            alert("Ошибка(");
+            console.log('Submission failed with these errors: ', response.meta.errors);
+          }
+        }
+      });
+    });
+  });

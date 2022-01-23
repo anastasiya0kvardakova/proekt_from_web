@@ -65,7 +65,7 @@ $(document).ready(function () {
     $('#contact-form1').on('submit', function (e) {
       e.preventDefault();
       $.ajax({
-        url: '',
+        url: 'https://api.slapform.com/BC3IYlID0',
         dataType: "json",
         method: 'POST',
         data: {

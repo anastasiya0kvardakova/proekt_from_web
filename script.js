@@ -118,6 +118,7 @@ Vue.component("modal", {
         this.loaded = true;
         setTimeout(() => {
           e.preventDefault();
+           
           fetch('', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
